@@ -34,14 +34,18 @@ const images: { id: number; src: string; alt: string }[] = [
 ];
 
 const ImageContainer = () => {
+  const getClassName = (image: { id: number }) => {
+    if (image?.id === 4 || image?.id === 1 || image?.id === 5) {
+      return image?.id === 1 ? 'hidden lg:block' : 'hidden sm:block';
+    }
+    return 'block';
+  };
+
   return (
-    <div className='absolute -bottom-[30%] left-1/2 flex w-[90%] -translate-x-1/2 flex-row justify-center gap-4 overflow-hidden rounded-[29.5px] bg-primary px-10 py-4 shadow-[24px_0px_4px_0px_#FFD6C6] sm:-bottom-[30%] lg:-bottom-[15%] xl:w-4/5'>
+    <div className='absolute bottom-[-30%] left-1/2 flex w-[90%] -translate-x-1/2 flex-row justify-center gap-4 overflow-hidden rounded-[29.5px] bg-primary px-10 py-4 shadow-[24px_0px_4px_0px_#FFD6C6] sm:bottom-[-30%] lg:bottom-[-15%] xl:w-4/5'>
       <div className='flex flex-row gap-4 rounded-xl'>
         {images?.map((image) => (
-          <div
-            key={image?.id}
-            className={`${image?.id === 4 || image?.id === 1 || image?.id == 5 ? ` ${image?.id == 1 ? `hidden lg:block` : 'hidden sm:block'} ` : 'block'}`}
-          >
+          <div key={image?.id} className={getClassName(image)}>
             <Image
               src={image?.src}
               alt={image.alt}
