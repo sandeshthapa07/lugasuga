@@ -5,5 +5,8 @@
     "prettier",
     "plugin:tailwindcss/recommended",
     "plugin:@typescript-eslint/recommended"
-  ]
+  ],
+  "rules": {
+    "tailwindcss/no-custom-classname": "off"
+  }
 }
