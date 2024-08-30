@@ -6,7 +6,12 @@ const Header = () => {
     <>
       {' '}
       <header>
-        <Image src='/lugasuga.svg' alt='logo' width={200} height={200} />
+        <Image
+          src='/lugasugamainlogo.svg'
+          alt='logo'
+          width={200}
+          height={200}
+        />
       </header>
     </>
   );
